@@ -16,6 +16,31 @@
 
 apply plugin: 'com.android.library'
 
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'grecyclerviewbaseadapter'
+
+    publishedGroupId = 'com.github.goutham106'
+    libraryName = 'GMRECYCLERVIEWBASEADAPTER'
+    artifact = 'grecyclerviewbaseadapter'
+
+    libraryDescription = 'It is a recyclerview adapter with maximum usage in a single library. And also reduce much more code'
+
+    siteUrl = 'https://github.com/goutham106/GmRecyclerviewBaseAdapter'
+    gitUrl = 'https://github.com/goutham106/GmRecyclerviewBaseAdapter.git'
+
+    libraryVersion = '0.1'
+
+    developerId = 'goutham106'
+    developerName = 'Gowtham Parimalazhagan'
+    developerEmail = 'goutham.gm11@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
@@ -35,9 +60,47 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     provided 'com.android.support:recyclerview-v7:26.1.0'
 }
+
+apply from: 'https://raw.githubusercontent.com/goutham106/Jcentergradles/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/goutham106/Jcentergradles/master/bintrayv1.gradle'
+
+tasks.withType(Javadoc){
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
+
+/*
+// Package source code jar
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    failOnError  false
+    source = android.sourceSets.main.java.sourceFiles
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    classpath += configurations.compile
+}
+
+// Package the document jar
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}*/
