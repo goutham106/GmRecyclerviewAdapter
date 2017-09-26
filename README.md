@@ -1,4 +1,4 @@
-# GmRecyclerviewBaseAdapter
+# GmRecyclerviewAdapter
 
 Powerful and flexible RecyclerAdapter, Through this we can minimise code a lot, Please feel free to use this.
 

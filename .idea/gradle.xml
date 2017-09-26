@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/demo" />
-            <option value="$PROJECT_DIR$/gmbaseadapter" />
+            <option value="$PROJECT_DIR$/grecyclerviewadapter" />
             <option value="$PROJECT_DIR$/material-spinner-1.0.5" />
           </set>
         </option>

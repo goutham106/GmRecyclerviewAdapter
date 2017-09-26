@@ -14,4 +14,4 @@
  *    limitations under the License.
  */
 
-include ':gmbaseadapter', ':demo', ':material-spinner-1.0.5'
+include ':grecyclerviewadapter', ':demo', ':material-spinner-1.0.5'
