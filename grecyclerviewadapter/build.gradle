@@ -22,7 +22,7 @@ ext {
     bintrayName = 'grecyclerviewadapter'
 
     publishedGroupId = 'com.github.goutham106'
-    libraryName = 'GMRECYCLERVIEWADAPTER'
+    libraryName = 'GRECYCLERVIEWADAPTER'
     artifact = 'grecyclerviewadapter'
 
     libraryDescription = 'It is a recyclerview adapter with maximum usage in a single library. And also reduce much more code'
@@ -30,7 +30,7 @@ ext {
     siteUrl = 'https://github.com/goutham106/GmRecyclerviewAdapter'
     gitUrl = 'https://github.com/goutham106/GmRecyclerviewAdapter.git'
 
-    libraryVersion = '0.1.0'
+    libraryVersion = '0.0.1'
 
     developerId = 'goutham106'
     developerName = 'Gowtham Parimalazhagan'
