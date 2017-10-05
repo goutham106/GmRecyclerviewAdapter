@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/GmRecyclerviewBaseAdapter.iml" filepath="$PROJECT_DIR$/GmRecyclerviewBaseAdapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/grecyclerviewadapter/grecyclerviewadapter.iml" filepath="$PROJECT_DIR$/grecyclerviewadapter/grecyclerviewadapter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/grecyclerviewadapter/grecyclerviewbaseadapter.iml" filepath="$PROJECT_DIR$/grecyclerviewadapter/grecyclerviewbaseadapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/material-spinner-1.0.5/material-spinner-1.0.5.iml" filepath="$PROJECT_DIR$/material-spinner-1.0.5/material-spinner-1.0.5.iml" />
     </modules>
   </component>

@@ -200,12 +200,12 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     /**
      * check if full page after {@link #setNewData(List)}, if full, it will enable load more again.
      * <p>
-     * 不是配置项！！
+     * Not a configuration item!
      * <p>
-     * 这个方法是用来检查是否满一屏的，所以只推荐在 {@link #setNewData(List)} 之后使用
-     * 原理很简单，先关闭 load more，检查完了再决定是否开启
+     * This method is used to check if it is full of a screen, so it is recommended only after {@link #setNewData (List)}
+     * The principle is very simple, first close the load more, check and then decide whether to open
      * <p>
-     * 不是配置项！！
+     * Not a configuration item!
      *
      * @param recyclerView your recyclerView
      * @see #setNewData(List)
@@ -313,7 +313,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     /**
      * Set custom load more
      *
-     * @param loadingView 加载视图
+     * @param loadingView Load the view
      */
     public void setLoadMoreView(LoadMoreView loadingView) {
         this.mLoadMoreView = loadingView;
@@ -571,7 +571,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
      * @param data data collection
      */
     public void replaceData(@NonNull Collection<? extends T> data) {
-        // 不是同一个引用才清空列表
+        // Not the same reference to empty the list
         if (data != mData) {
             mData.clear();
             mData.addAll(data);
@@ -594,7 +594,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     /**
      * Get the data of list
      *
-     * @return 列表数据
+     * @return List data
      */
     @NonNull
     public List<T> getData() {
@@ -1008,7 +1008,7 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
             temp = temp.getSuperclass();
         }
         K k;
-        // 泛型擦除会导致z为null
+        // Generic Class causes z to be null
         if (z == null) {
             k = (K) new BaseViewHolder(view);
         } else {
@@ -1065,6 +1065,11 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
                     Class tempClass = (Class) temp;
                     if (BaseViewHolder.class.isAssignableFrom(tempClass)) {
                         return tempClass;
+                    }
+                } else if (temp instanceof ParameterizedType) {
+                    Type rawType = ((ParameterizedType) temp).getRawType();
+                    if (rawType instanceof Class && BaseViewHolder.class.isAssignableFrom((Class<?>) rawType)) {
+                        return (Class<?>) rawType;
                     }
                 }
             }

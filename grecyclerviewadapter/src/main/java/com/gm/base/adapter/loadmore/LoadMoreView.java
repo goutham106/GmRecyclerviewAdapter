@@ -19,6 +19,7 @@ package com.gm.base.adapter.loadmore;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 
+import com.gm.base.adapter.BaseQuickAdapter;
 import com.gm.base.adapter.BaseViewHolder;
 
 /**
