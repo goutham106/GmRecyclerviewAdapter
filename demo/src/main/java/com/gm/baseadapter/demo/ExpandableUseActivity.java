@@ -20,7 +20,6 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-
 import com.gm.base.adapter.entity.MultiItemEntity;
 import com.gm.baseadapter.demo.adapter.ExpandableItemAdapter;
 import com.gm.baseadapter.demo.base.BaseActivity;
@@ -41,6 +40,7 @@ public class ExpandableUseActivity extends BaseActivity {
     RecyclerView mRecyclerView;
     ExpandableItemAdapter adapter;
     ArrayList<MultiItemEntity> list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

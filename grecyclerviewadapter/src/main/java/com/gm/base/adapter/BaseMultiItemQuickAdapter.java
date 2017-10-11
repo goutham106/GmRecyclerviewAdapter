@@ -33,13 +33,12 @@ import java.util.List;
 
 public abstract class BaseMultiItemQuickAdapter<T extends MultiItemEntity, K extends BaseViewHolder> extends BaseQuickAdapter<T, K> {
 
+    public static final int TYPE_NOT_FOUND = -404;
+    private static final int DEFAULT_VIEW_TYPE = -0xff;
     /**
      * layouts indexed with their types
      */
     private SparseIntArray layouts;
-
-    private static final int DEFAULT_VIEW_TYPE = -0xff;
-    public static final int TYPE_NOT_FOUND = -404;
 
     /**
      * Same as QuickAdapter#QuickAdapter(Context,int) but with

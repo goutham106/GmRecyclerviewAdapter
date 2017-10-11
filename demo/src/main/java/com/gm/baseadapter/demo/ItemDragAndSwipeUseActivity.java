@@ -27,7 +27,6 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 
-
 import com.gm.base.adapter.BaseQuickAdapter;
 import com.gm.base.adapter.BaseViewHolder;
 import com.gm.base.adapter.callback.ItemDragAndSwipeCallback;

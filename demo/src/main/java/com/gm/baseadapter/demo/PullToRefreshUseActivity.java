@@ -42,14 +42,11 @@ import com.gm.baseadapter.demo.loadmore.CustomLoadMoreView;
  * Created on : 9/20/17.
  */
 public class PullToRefreshUseActivity extends BaseActivity implements BaseQuickAdapter.RequestLoadMoreListener, SwipeRefreshLayout.OnRefreshListener {
+    private static final int TOTAL_COUNTER = 18;
+    private static final int PAGE_SIZE = 6;
     private RecyclerView mRecyclerView;
     private PullToRefreshAdapter pullToRefreshAdapter;
     private SwipeRefreshLayout mSwipeRefreshLayout;
-
-    private static final int TOTAL_COUNTER = 18;
-
-    private static final int PAGE_SIZE = 6;
-
     private int delayMillis = 1000;
 
     private int mCurrentCounter = 0;

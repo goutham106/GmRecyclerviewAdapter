@@ -23,13 +23,15 @@ import java.util.List;
  * Email      : goutham.gm11@gmail.com
  * Github     : https://github.com/goutham106
  * Created on : 9/19/17.
- *
- *
+ * <p>
+ * <p>
  * implement the interface if the item is expandable
  */
 public interface IExpandable<T> {
     boolean isExpanded();
+
     void setExpanded(boolean expanded);
+
     List<T> getSubItems();
 
     /**

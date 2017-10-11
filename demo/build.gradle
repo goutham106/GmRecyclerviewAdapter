@@ -16,6 +16,7 @@
 
 apply plugin: 'com.android.application'
 import com.android.build.OutputFile
+
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
@@ -53,7 +54,7 @@ android {
     }
 
 // map for the version code
-    def abiVersionCodes = ['armeabi': 1,'armeabi-v7a': 2, 'arm64-v8a': 3, 'x86': 4, 'x86_64': 5, 'mips': 6, 'mips64': 7]
+    def abiVersionCodes = ['armeabi': 1, 'armeabi-v7a': 2, 'arm64-v8a': 3, 'x86': 4, 'x86_64': 5, 'mips': 6, 'mips64': 7]
 
     android.applicationVariants.all { variant ->
         // assign different version code for each output

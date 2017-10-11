@@ -35,6 +35,7 @@ public class MultipleItem implements MultiItemEntity {
     public static final int IMG_TEXT_SPAN_SIZE_MIN = 2;
     private int itemType;
     private int spanSize;
+    private String content;
 
     public MultipleItem(int itemType, int spanSize, String content) {
         this.itemType = itemType;
@@ -54,8 +55,6 @@ public class MultipleItem implements MultiItemEntity {
     public void setSpanSize(int spanSize) {
         this.spanSize = spanSize;
     }
-
-    private String content;
 
     public String getContent() {
         return content;

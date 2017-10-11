@@ -39,6 +39,7 @@ import java.util.Random;
 public class UpFetchUseActivity extends BaseActivity {
     RecyclerView mRecyclerView;
     UpFetchAdapter mAdapter;
+    private int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +63,6 @@ public class UpFetchUseActivity extends BaseActivity {
             }
         });
     }
-
-    private int count;
 
     private void startUpFetch() {
         count++;

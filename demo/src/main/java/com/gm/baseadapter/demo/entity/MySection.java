@@ -27,6 +27,7 @@ import com.gm.base.adapter.entity.SectionEntity;
  */
 public class MySection extends SectionEntity<Video> {
     private boolean isMore;
+
     public MySection(boolean isHeader, String header, boolean isMroe) {
         super(isHeader, header);
         this.isMore = isMroe;

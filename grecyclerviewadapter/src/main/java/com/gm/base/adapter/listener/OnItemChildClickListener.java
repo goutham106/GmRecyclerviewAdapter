@@ -25,8 +25,8 @@ import com.gm.base.adapter.BaseQuickAdapter;
  * Email      : goutham.gm11@gmail.com
  * Github     : https://github.com/goutham106
  * Created on : 9/19/17.
- *
- *
+ * <p>
+ * <p>
  * A convenience class to extend when you only want to OnItemChildClickListener for a subset
  * of all the SimpleClickListener. This implements all methods in the
  * {@link SimpleClickListener}

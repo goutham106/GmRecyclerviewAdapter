@@ -38,6 +38,19 @@ import com.gm.baseadapter.demo.util.Utils;
  * Created on : 9/20/17.
  */
 public class AnimationAdapter extends BaseQuickAdapter<Status, BaseViewHolder> {
+    ClickableSpan clickableSpan = new ClickableSpan() {
+        @Override
+        public void onClick(View widget) {
+            ToastUtils.showShortToast("Event triggered landscapes and nedes");
+        }
+
+        @Override
+        public void updateDrawState(TextPaint ds) {
+            ds.setColor(Utils.getContext().getResources().getColor(R.color.clickspan_color));
+            ds.setUnderlineText(true);
+        }
+    };
+
     public AnimationAdapter() {
         super(R.layout.layout_animation, DataServer.getSampleData(100));
     }
@@ -65,17 +78,4 @@ public class AnimationAdapter extends BaseQuickAdapter<Status, BaseViewHolder> {
         ((TextView) helper.getView(R.id.tweetText)).setClickable(false);
         ((TextView) helper.getView(R.id.tweetText)).setLongClickable(false);
     }
-
-    ClickableSpan clickableSpan = new ClickableSpan() {
-        @Override
-        public void onClick(View widget) {
-            ToastUtils.showShortToast("Event triggered landscapes and nedes");
-        }
-
-        @Override
-        public void updateDrawState(TextPaint ds) {
-            ds.setColor(Utils.getContext().getResources().getColor(R.color.clickspan_color));
-            ds.setUnderlineText(true);
-        }
-    };
 }

@@ -23,7 +23,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
 import com.gm.baseadapter.demo.R;
 import com.gm.baseadapter.demo.data.DataServer;
 import com.gm.baseadapter.demo.entity.Status;
@@ -41,6 +40,7 @@ public class DefAdpater extends RecyclerView.Adapter<DefAdpater.ViewHolder> {
     private final List<Status> sampleData = DataServer.getSampleData(100);
     private Context mContext;
     private LayoutInflater mLayoutInflater;
+
     public DefAdpater(Context context) {
         mContext = context;
         mLayoutInflater = LayoutInflater.from(context);

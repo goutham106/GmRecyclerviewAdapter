@@ -30,7 +30,7 @@ public class Level0Item extends AbstractExpandableItem<Level1Item> implements Mu
     public String title;
     public String subTitle;
 
-    public Level0Item( String title, String subTitle) {
+    public Level0Item(String title, String subTitle) {
         this.subTitle = subTitle;
         this.title = title;
     }

@@ -41,10 +41,10 @@ import java.util.List;
 
 public class ItemClickActivity extends BaseActivity {
 
-    private RecyclerView mRecyclerView;
-    private ItemClickAdapter adapter;
     private static final int PAGE_SIZE = 10;
     private static String TAG = "ItemClickActivity";
+    private RecyclerView mRecyclerView;
+    private ItemClickAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

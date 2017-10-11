@@ -56,28 +56,19 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
      * Views indexed with their IDs
      */
     private final SparseArray<View> views;
-
-    public Set<Integer> getNestViews() {
-        return nestViews;
-    }
-
     private final HashSet<Integer> nestViews;
-
     private final LinkedHashSet<Integer> childClickViewIds;
-
     private final LinkedHashSet<Integer> itemChildLongClickViewIds;
-    private BaseQuickAdapter adapter;
     /**
      * use itemView instead
      */
     @Deprecated
     public View convertView;
-
     /**
      * Package private field to retain the associated user object and detect a change
      */
     Object associatedObject;
-
+    private BaseQuickAdapter adapter;
 
     public BaseViewHolder(final View view) {
         super(view);
@@ -90,8 +81,12 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
 
     }
 
+    public Set<Integer> getNestViews() {
+        return nestViews;
+    }
+
     private int getClickPosition() {
-        if (getLayoutPosition()>=adapter.getHeaderLayoutCount()){
+        if (getLayoutPosition() >= adapter.getHeaderLayoutCount()) {
             return getLayoutPosition() - adapter.getHeaderLayoutCount();
         }
         return 0;

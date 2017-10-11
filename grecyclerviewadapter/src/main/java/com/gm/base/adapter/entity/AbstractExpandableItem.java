@@ -24,8 +24,8 @@ import java.util.List;
  * Email      : goutham.gm11@gmail.com
  * Github     : https://github.com/goutham106
  * Created on : 9/19/17.
- *
- *
+ * <p>
+ * <p>
  * <p>A helper to implement expandable item.</p>
  * <p>if you don't want to extent a class, you can also implement the interface IExpandable</p>
  */
@@ -48,12 +48,12 @@ public abstract class AbstractExpandableItem<T> implements IExpandable<T> {
         return mSubItems;
     }
 
-    public boolean hasSubItem() {
-        return mSubItems != null && mSubItems.size() > 0;
-    }
-
     public void setSubItems(List<T> list) {
         mSubItems = list;
+    }
+
+    public boolean hasSubItem() {
+        return mSubItems != null && mSubItems.size() > 0;
     }
 
     public T getSubItem(int position) {

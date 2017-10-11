@@ -39,31 +39,6 @@ import com.gm.baseadapter.demo.util.Utils;
  * Created on : 9/20/17.
  */
 public class NestAdapter extends BaseQuickAdapter<Status, BaseViewHolder> {
-    public NestAdapter() {
-        super( R.layout.layout_nest_item, DataServer.getSampleData(20));
-    }
-
-    @Override
-    protected void convert(BaseViewHolder helper, Status item) {
-        helper.addOnClickListener(R.id.tweetText);
-        switch (helper.getLayoutPosition()%
-                3){
-            case 0:
-                helper.setImageResource(R.id.img,R.mipmap.animation_img1);
-                break;
-            case 1:
-                helper.setImageResource(R.id.img,R.mipmap.animation_img2);
-                break;
-            case 2:
-                helper.setImageResource(R.id.img,R.mipmap.animation_img3);
-                break;
-        }
-        helper.setText(R.id.tweetName,"Test Title");
-        String msg="\"This is a test description for testing purpose\"";
-        ( (TextView)helper.getView(R.id.tweetText)).setText(SpannableStringUtils.getBuilder(msg).append("This is a spannable link").setClickSpan(clickableSpan).create());
-        ( (TextView)helper.getView(R.id.tweetText)).setMovementMethod(LinkMovementMethod.getInstance());
-    }
-
     ClickableSpan clickableSpan = new ClickableSpan() {
         @Override
         public void onClick(View widget) {
@@ -76,4 +51,29 @@ public class NestAdapter extends BaseQuickAdapter<Status, BaseViewHolder> {
             ds.setUnderlineText(true);
         }
     };
+
+    public NestAdapter() {
+        super(R.layout.layout_nest_item, DataServer.getSampleData(20));
+    }
+
+    @Override
+    protected void convert(BaseViewHolder helper, Status item) {
+        helper.addOnClickListener(R.id.tweetText);
+        switch (helper.getLayoutPosition() %
+                3) {
+            case 0:
+                helper.setImageResource(R.id.img, R.mipmap.animation_img1);
+                break;
+            case 1:
+                helper.setImageResource(R.id.img, R.mipmap.animation_img2);
+                break;
+            case 2:
+                helper.setImageResource(R.id.img, R.mipmap.animation_img3);
+                break;
+        }
+        helper.setText(R.id.tweetName, "Test Title");
+        String msg = "\"This is a test description for testing purpose\"";
+        ((TextView) helper.getView(R.id.tweetText)).setText(SpannableStringUtils.getBuilder(msg).append("This is a spannable link").setClickSpan(clickableSpan).create());
+        ((TextView) helper.getView(R.id.tweetText)).setMovementMethod(LinkMovementMethod.getInstance());
+    }
 }

@@ -19,3 +19,13 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+#GrecyclerViewAdapterHelper
+-keep class com.gm.base.adapter.** {
+*;
+}
+-keep public class * extends com.gm.base.adapter.BaseQuickAdapter
+-keep public class * extends com.gm.base.adapter.BaseViewHolder
+-keepclassmembers public class * extends com.gm.base.adapter.BaseViewHolder {
+           <init>(android.view.View);
+}

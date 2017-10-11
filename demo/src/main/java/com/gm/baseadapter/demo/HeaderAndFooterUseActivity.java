@@ -24,7 +24,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-
 import com.gm.base.adapter.BaseQuickAdapter;
 import com.gm.baseadapter.demo.adapter.HeaderAndFooterAdapter;
 import com.gm.baseadapter.demo.base.BaseActivity;
@@ -38,9 +37,9 @@ import com.gm.baseadapter.demo.data.DataServer;
  */
 public class HeaderAndFooterUseActivity extends BaseActivity {
 
+    private static final int PAGE_SIZE = 3;
     private RecyclerView mRecyclerView;
     private HeaderAndFooterAdapter headerAndFooterAdapter;
-    private static final int PAGE_SIZE = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -17,7 +17,6 @@
 package com.gm.baseadapter.demo.entity;
 
 import android.view.View;
-import android.widget.Toast;
 
 import com.gm.baseadapter.demo.util.ToastUtils;
 

@@ -22,7 +22,6 @@ import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.TextView;
 
-
 import com.gm.base.adapter.BaseQuickAdapter;
 import com.gm.base.adapter.BaseViewHolder;
 import com.gm.baseadapter.demo.R;
@@ -40,30 +39,6 @@ import com.gm.baseadapter.demo.util.Utils;
  * Created on : 9/20/17.
  */
 public class PullToRefreshAdapter extends BaseQuickAdapter<Status, BaseViewHolder> {
-    public PullToRefreshAdapter() {
-        super( R.layout.layout_animation, DataServer.getSampleData(10));
-    }
-
-    @Override
-    protected void convert(BaseViewHolder helper, Status item) {
-        switch (helper.getLayoutPosition()%
-                3){
-            case 0:
-                helper.setImageResource(R.id.img,R.mipmap.animation_img1);
-                break;
-            case 1:
-                helper.setImageResource(R.id.img,R.mipmap.animation_img2);
-                break;
-            case 2:
-                helper.setImageResource(R.id.img,R.mipmap.animation_img3);
-                break;
-        }
-        helper.setText(R.id.tweetName,"Test Title");
-        String msg="\"This is a test description for testing purpose\"";
-        ( (TextView)helper.getView(R.id.tweetText)).setText(SpannableStringUtils.getBuilder(msg).append("This is a spannable link").setClickSpan(clickableSpan).create());
-        ( (TextView)helper.getView(R.id.tweetText)).setMovementMethod(LinkMovementMethod.getInstance());
-    }
-
     ClickableSpan clickableSpan = new ClickableSpan() {
         @Override
         public void onClick(View widget) {
@@ -76,6 +51,30 @@ public class PullToRefreshAdapter extends BaseQuickAdapter<Status, BaseViewHolde
             ds.setUnderlineText(true);
         }
     };
+
+    public PullToRefreshAdapter() {
+        super(R.layout.layout_animation, DataServer.getSampleData(10));
+    }
+
+    @Override
+    protected void convert(BaseViewHolder helper, Status item) {
+        switch (helper.getLayoutPosition() %
+                3) {
+            case 0:
+                helper.setImageResource(R.id.img, R.mipmap.animation_img1);
+                break;
+            case 1:
+                helper.setImageResource(R.id.img, R.mipmap.animation_img2);
+                break;
+            case 2:
+                helper.setImageResource(R.id.img, R.mipmap.animation_img3);
+                break;
+        }
+        helper.setText(R.id.tweetName, "Test Title");
+        String msg = "\"This is a test description for testing purpose\"";
+        ((TextView) helper.getView(R.id.tweetText)).setText(SpannableStringUtils.getBuilder(msg).append("This is a spannable link").setClickSpan(clickableSpan).create());
+        ((TextView) helper.getView(R.id.tweetText)).setMovementMethod(LinkMovementMethod.getInstance());
+    }
 
 
 }

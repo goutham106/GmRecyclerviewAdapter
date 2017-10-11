@@ -37,11 +37,10 @@ import java.util.List;
  * Created on : 9/20/17.
  */
 public class ExpandableItemAdapter extends BaseMultiItemQuickAdapter<MultiItemEntity, BaseViewHolder> {
-    private static final String TAG = ExpandableItemAdapter.class.getSimpleName();
-
     public static final int TYPE_LEVEL_0 = 0;
     public static final int TYPE_LEVEL_1 = 1;
     public static final int TYPE_PERSON = 2;
+    private static final String TAG = ExpandableItemAdapter.class.getSimpleName();
 
     /**
      * Same as QuickAdapter#QuickAdapter(Context,int) but with

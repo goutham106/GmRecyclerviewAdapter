@@ -38,7 +38,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        appContext =this;
+        appContext = this;
         Utils.init(this);
         ToastUtils.init(true);
         if (BuildConfig.DEBUG) {

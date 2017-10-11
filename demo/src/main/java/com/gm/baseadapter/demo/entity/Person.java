@@ -26,13 +26,12 @@ import com.gm.baseadapter.demo.adapter.ExpandableItemAdapter;
  * Created on : 9/20/17.
  */
 public class Person implements MultiItemEntity {
+    public String name;
+    public int age;
     public Person(String name, int age) {
         this.age = age;
         this.name = name;
     }
-
-    public String name;
-    public int age;
 
     @Override
     public int getItemType() {

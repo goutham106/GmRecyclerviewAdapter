@@ -38,12 +38,13 @@ import com.orhanobut.logger.Logger;
  * Created on : 9/20/17.
  */
 public class BaseActivity extends AppCompatActivity {
+    protected final String TAG = this.getClass().getSimpleName();
     /**
      * Title flag getSupportActionBar ().
      **/
     private TextView title;
     private ImageView back;
-    protected final String TAG = this.getClass().getSimpleName();
+    private LinearLayout rootLayout;
 
     protected void setTitle(String msg) {
         if (title != null) {
@@ -63,7 +64,7 @@ public class BaseActivity extends AppCompatActivity {
                     finish();
                 }
             });
-        }else {
+        } else {
             Logger.t(TAG).e("back is null ,please check out");
         }
 
@@ -73,13 +74,11 @@ public class BaseActivity extends AppCompatActivity {
         if (back != null) {
             back.setVisibility(View.VISIBLE);
             back.setOnClickListener(l);
-        }else {
+        } else {
             Logger.t(TAG).e("back is null ,please check out");
         }
 
     }
-
-    private LinearLayout rootLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

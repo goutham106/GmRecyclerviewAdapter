@@ -21,7 +21,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
-
 import com.gm.base.adapter.BaseMultiItemQuickAdapter;
 import com.gm.base.adapter.BaseQuickAdapter;
 import com.gm.base.adapter.BaseViewHolder;
@@ -94,7 +93,7 @@ public class ItemClickAdapter extends BaseMultiItemQuickAdapter<ClickEntity, Bas
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-        Logger.d("Nested RecycleView item received: "+" click on the first" + position + " once");
-        Toast.makeText(Utils.getContext(), "Nested RecycleView item received: "+" click on the first" + position + " once", Toast.LENGTH_SHORT).show();
+        Logger.d("Nested RecycleView item received: " + " click on the first" + position + " once");
+        Toast.makeText(Utils.getContext(), "Nested RecycleView item received: " + " click on the first" + position + " once", Toast.LENGTH_SHORT).show();
     }
 }

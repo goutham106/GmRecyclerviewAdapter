@@ -21,7 +21,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-
 import com.gm.base.adapter.BaseQuickAdapter;
 import com.gm.baseadapter.demo.adapter.DataBindingUseAdapter;
 import com.gm.baseadapter.demo.base.BaseActivity;
