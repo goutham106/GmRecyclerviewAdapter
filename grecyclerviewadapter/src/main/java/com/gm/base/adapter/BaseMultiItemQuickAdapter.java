@@ -16,10 +16,12 @@
 
 package com.gm.base.adapter;
 
+import android.support.annotation.IntRange;
 import android.support.annotation.LayoutRes;
 import android.util.SparseIntArray;
 import android.view.ViewGroup;
 
+import com.gm.base.adapter.entity.IExpandable;
 import com.gm.base.adapter.entity.MultiItemEntity;
 
 import java.util.List;
@@ -79,6 +81,52 @@ public abstract class BaseMultiItemQuickAdapter<T extends MultiItemEntity, K ext
         layouts.put(type, layoutResId);
     }
 
+    @Override
+    public void remove(@IntRange(from = 0L) int position) {
+        if (mData == null
+                || position < 0
+                || position >= mData.size()) return;
+
+        T entity = mData.get(position);
+        if (entity instanceof IExpandable) {
+            removeAllChild((IExpandable) entity, position);
+        }
+        removeDataFromParent(entity);
+        super.remove(position);
+    }
+
+    /**
+     * When the parent control is removed, if all the child controls are removed
+     * when the parent control is in the expanded state
+     *
+     * @param parent         Parent control entity
+     * @param parentPosition Parent control location
+     */
+    protected void removeAllChild(IExpandable parent, int parentPosition) {
+        if (parent.isExpanded()) {
+            List<MultiItemEntity> chidChilds = parent.getSubItems();
+            if (chidChilds == null || chidChilds.size() == 0) return;
+
+            int childSize = chidChilds.size();
+            for (int i = 0; i < childSize; i++) {
+                remove(parentPosition + 1);
+            }
+        }
+    }
+
+    /**
+     * When you remove a child control, remove the associated child control data from the parent control entity class,
+     * avoid closing the data again after closing
+     *
+     * @param child Child control entity
+     */
+    protected void removeDataFromParent(T child) {
+        int position = getParentPosition(child);
+        if (position >= 0) {
+            IExpandable parent = (IExpandable) mData.get(position);
+            parent.getSubItems().remove(child);
+        }
+    }
 
 }
 

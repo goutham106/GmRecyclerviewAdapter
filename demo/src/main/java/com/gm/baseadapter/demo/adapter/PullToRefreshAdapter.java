@@ -39,21 +39,8 @@ import com.gm.baseadapter.demo.util.Utils;
  * Created on : 9/20/17.
  */
 public class PullToRefreshAdapter extends BaseQuickAdapter<Status, BaseViewHolder> {
-    ClickableSpan clickableSpan = new ClickableSpan() {
-        @Override
-        public void onClick(View widget) {
-            ToastUtils.showShortToast("Event triggered");
-        }
-
-        @Override
-        public void updateDrawState(TextPaint ds) {
-            ds.setColor(Utils.getContext().getResources().getColor(R.color.clickspan_color));
-            ds.setUnderlineText(true);
-        }
-    };
-
     public PullToRefreshAdapter() {
-        super(R.layout.layout_animation, DataServer.getSampleData(10));
+        super(R.layout.layout_animation, null);
     }
 
     @Override
@@ -76,5 +63,17 @@ public class PullToRefreshAdapter extends BaseQuickAdapter<Status, BaseViewHolde
         ((TextView) helper.getView(R.id.tweetText)).setMovementMethod(LinkMovementMethod.getInstance());
     }
 
+    ClickableSpan clickableSpan = new ClickableSpan() {
+        @Override
+        public void onClick(View widget) {
+            ToastUtils.showShortToast("Event triggered");
+        }
+
+        @Override
+        public void updateDrawState(TextPaint ds) {
+            ds.setColor(Utils.getContext().getResources().getColor(R.color.clickspan_color));
+            ds.setUnderlineText(true);
+        }
+    };
 
 }

@@ -19,7 +19,7 @@ import android.app.Application;
 
 import com.gm.baseadapter.demo.util.ToastUtils;
 import com.gm.baseadapter.demo.util.Utils;
-import com.orhanobut.logger.LogLevel;
+import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 
 /**
@@ -42,14 +42,7 @@ public class MyApplication extends Application {
         Utils.init(this);
         ToastUtils.init(true);
         if (BuildConfig.DEBUG) {
-            Logger
-                    .init("GmRecyclerViewBaseAdapter")                 // default PRETTYLOGGER or use just init()
-                    .methodCount(3)                 // default 2
-                    .logLevel(LogLevel.FULL)        // default LogLevel.FULL
-                    .methodOffset(2)                // default 0
-            ; //default AndroidLogAdapter
-
-
+            Logger.addLogAdapter(new AndroidLogAdapter());
         }
     }
 }

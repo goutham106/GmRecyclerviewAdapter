@@ -84,7 +84,7 @@ dependencies {
     implementation project(path: ':grecyclerviewadapter')
 
     implementation 'com.kyleduo.switchbutton:library:1.4.4'
-    implementation 'com.orhanobut:logger:1.15'
+    implementation 'com.orhanobut:logger:2.1.1'
 
 
 }

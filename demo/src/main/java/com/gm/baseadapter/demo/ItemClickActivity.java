@@ -28,6 +28,7 @@ import com.gm.base.adapter.BaseQuickAdapter;
 import com.gm.baseadapter.demo.adapter.ItemClickAdapter;
 import com.gm.baseadapter.demo.base.BaseActivity;
 import com.gm.baseadapter.demo.entity.ClickEntity;
+import com.gm.baseadapter.demo.util.VegaLayoutManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +54,8 @@ public class ItemClickActivity extends BaseActivity {
         setTitle("ItemClickActivity Activity");
         setContentView(R.layout.activity_item_click);
         mRecyclerView = findViewById(R.id.list);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new VegaLayoutManager());
         initAdapter();
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -150,8 +152,8 @@ public class ItemClickActivity extends BaseActivity {
         data.add(new ClickEntity(ClickEntity.LONG_CLICK_ITEM_CHILD_VIEW));
         data.add(new ClickEntity(ClickEntity.NEST_CLICK_ITEM_CHILD_VIEW));
         adapter = new ItemClickAdapter(data);
-        adapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
-        adapter.isFirstOnly(false);
+//        adapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
+//        adapter.isFirstOnly(false);
         mRecyclerView.setAdapter(adapter);
     }
 
