@@ -30,7 +30,7 @@ ext {
     siteUrl = 'https://github.com/goutham106/GmRecyclerviewAdapter'
     gitUrl = 'https://github.com/goutham106/GmRecyclerviewAdapter.git'
 
-    libraryVersion = '0.0.1'
+    libraryVersion = '0.0.2'
 
     developerId = 'goutham106'
     developerName = 'Gowtham Parimalazhagan'
