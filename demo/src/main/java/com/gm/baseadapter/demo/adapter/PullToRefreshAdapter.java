@@ -25,7 +25,6 @@ import android.widget.TextView;
 import com.gm.base.adapter.BaseQuickAdapter;
 import com.gm.base.adapter.BaseViewHolder;
 import com.gm.baseadapter.demo.R;
-import com.gm.baseadapter.demo.data.DataServer;
 import com.gm.baseadapter.demo.entity.Status;
 import com.gm.baseadapter.demo.util.SpannableStringUtils;
 import com.gm.baseadapter.demo.util.ToastUtils;

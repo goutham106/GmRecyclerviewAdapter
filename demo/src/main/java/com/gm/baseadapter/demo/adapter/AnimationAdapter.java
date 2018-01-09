@@ -41,7 +41,7 @@ public class AnimationAdapter extends BaseQuickAdapter<Status, BaseViewHolder> {
     ClickableSpan clickableSpan = new ClickableSpan() {
         @Override
         public void onClick(View widget) {
-            ToastUtils.showShortToast("Event triggered landscapes and nedes");
+            ToastUtils.showShortToast("Event triggered");
         }
 
         @Override
